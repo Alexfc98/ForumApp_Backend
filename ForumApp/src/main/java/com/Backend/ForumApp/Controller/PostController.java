@@ -6,20 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.Backend.ForumApp.Models.Post;
 import com.Backend.ForumApp.Service.PostService;
 
 @RestController
-@RequestMapping(name = "/posts")
+@CrossOrigin()
+@RequestMapping("/api/posts")
 public class PostController {
-	
-	@Autowired 
+    @Autowired
 	PostService service;
 	
 	@GetMapping
@@ -32,6 +28,7 @@ public class PostController {
 	@PostMapping
 	public ResponseEntity<Post> createPost(@RequestBody Post myItem){
 		Post created = service.createPost(myItem);
+
 	    return new ResponseEntity<Post>(created, new HttpHeaders(), HttpStatus.OK);
 	}
 }

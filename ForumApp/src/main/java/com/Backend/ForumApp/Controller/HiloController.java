@@ -17,7 +17,7 @@ import com.Backend.ForumApp.Service.HiloService;
 
 
 @RestController
-@RequestMapping("/hilos")
+@RequestMapping("/api/hilos")
 public class HiloController {
 
 	

@@ -13,7 +13,7 @@ public class Post {
 	private String message;
 	private Image image;
 	private int id;
-	
+	private String tittle;
 	
 	
 }
